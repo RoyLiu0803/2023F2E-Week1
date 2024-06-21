@@ -1,0 +1,76 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+body {
+  font-size: 16px;
+  font-family: "Inter", "Noto Sans TC", sans-serif;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  scrollbar-width: none;
+}
+
+@font-face {
+  font-family: "MantouSans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/font/MantouSans-Regular.ttf") format("truetype");
+}
+
+h1 {
+  font-family: "MantouSans";
+  @apply bg-gradient bg-clip-text text-transparent text-[6rem] leading-[6.5rem] tracking-normal mb-2 text-center
+  table:text-[4.5rem] table:leading-[5rem];
+}
+h2 {
+  font-family: "MantouSans";
+  @apply bg-gradient bg-clip-text text-transparent text-[4rem] leading-[6rem] tracking-normal text-center
+  table:text-[3rem] table:leading-[4rem];
+}
+
+h3 {
+  @apply rounded-lg px-3 py-2 bg-secondary text-white font-bold m-auto text-16s w-fit;
+}
+
+.section {
+  @apply py-[6.5rem] px-[18.75rem] table:px-9 table:py-16;
+}
+
+
+.touchIcon {
+  @apply relative cursor-pointer  w-10 h-10 flex items-center justify-center bg-white rounded-full;
+  img {
+    @apply relative z-10;
+  }
+  &:hover:before {
+    @apply transition-all duration-500 scale-100;
+  }
+  &:before {
+    @apply content-[""] bg-rose/20 w-full h-full absolute rounded-full scale-0;
+  }
+}
+
+.miaoLiHan {
+  @apply px-4 py-3 flex items-center gap-3 w-fit m-auto rounded-2xl
+  mobile:px-3 mobile:py-2;
+  &_text {
+    @apply text-primary text-40s font-bold table:w-max
+    mobile:text-24s;
+  }
+  box-shadow: 0px 4px 12px 0px #a3b4cb33;
+  .circle3 {
+    @apply scale-75;
+  }
+}
+.circle3 {
+  @apply w-[50px] h-[50px] bg-gradient rounded-full text-white text-32s font-black text-center;
+}
